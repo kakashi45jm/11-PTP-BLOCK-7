@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+:root {
+  --school-navy-dark: #071324;
+  --school-navy: #0b1f3a;
+  --school-blue: #2563eb;
+  --school-blue-light: #60a5fa;
+  --school-bg: #030712;
+  --school-card: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+  background-color: #050b14;
+  color: #f1f5f9;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* iOS 27 Liquid Glassmorphism Core Utilities */
+.ios-glass {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.32),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.ios-glass-card {
+  background: rgba(18, 30, 49, 0.65);
+  backdrop-filter: blur(30px) saturate(210%);
+  -webkit-backdrop-filter: blur(30px) saturate(210%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 
+    0 16px 40px -8px rgba(0, 0, 0, 0.45),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.ios-glass-card-light {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(30px) saturate(200%);
+  -webkit-backdrop-filter: blur(30px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 16px 40px -8px rgba(0, 0, 0, 0.12),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.8);
+}
+
+.ios-glass-pill {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 4px 16px 0 rgba(0, 0, 0, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35);
+}
+
+.ios-dock-glass {
+  background: rgba(15, 25, 45, 0.72);
+  backdrop-filter: blur(36px) saturate(220%);
+  -webkit-backdrop-filter: blur(36px) saturate(220%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 
+    0 24px 60px -10px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Holographic liquid shimmer effect */
+.ios-hologram {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.05) 25%,
+    rgba(96, 165, 250, 0.2) 50%,
+    rgba(192, 132, 252, 0.2) 75%,
+    rgba(255, 255, 255, 0.25) 100%
+  );
+  background-size: 250% 250%;
+  animation: hologram-flow 8s ease infinite;
+}
+
+@keyframes hologram-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Liquid Blob animations for iOS 27 ambient mesh */
+@keyframes liquid-drift-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(50px, -40px) scale(1.15);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.92);
+  }
+}
+
+@keyframes liquid-drift-2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-45px, 55px) scale(1.12);
+  }
+  66% {
+    transform: translate(40px, -25px) scale(0.95);
+  }
+}
+
+@keyframes liquid-pulse {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 0.75; }
+}
+
+.animate-liquid-1 {
+  animation: liquid-drift-1 18s ease-in-out infinite;
+}
+
+.animate-liquid-2 {
+  animation: liquid-drift-2 22s ease-in-out infinite;
+}
+
+.animate-liquid-pulse {
+  animation: liquid-pulse 7s ease-in-out infinite;
+}
+
+/* Custom scrollbars with sleek glass thumb */
+.table-scrollbar::-webkit-scrollbar,
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Leaflet map styles with rounded glass frame */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.25rem;
+  z-index: 10;
+}
+
+/* Touch-friendly interactive targets with tactile active bounce */
+button, a, input, select, textarea {
+  touch-action: manipulation;
+}
+
+.ios-pressable {
+  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.18s ease;
+}
+
+.ios-pressable:active {
+  transform: scale(0.965);
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Grade 11 - PTP Block 7 School Portal",
+  "description": "Digital classroom and section portal for Grade 11 PTP Block 7 featuring class schedule, student & teacher directory, announcements, school map, and real-time messaging.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
